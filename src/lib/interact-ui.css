@@ -1,0 +1,185 @@
+/*
+ * Copyright (c) 2012 Taye Adeyemi
+ * Open source under the MIT License.
+ * https://raw.github.com/taye/interact-ui/master/LICENSE
+ */
+.ui-bar {
+  background-color: #6666ff;
+  float: left;
+  border-radius: 2px;
+}
+
+.ui-handle {
+  width: 0px;
+  height: 0px;
+  background-color: blue;
+  border: none;
+  border-width: 3px;
+  border-color: #000099;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.ui-handle::before {
+  background-color: inherit;
+  border: solid 3px;
+  border-color: inherit;
+  border-radius: inherit;
+  position: absolute;
+}
+
+.ui-slider {
+  width: 100%;
+}
+.ui-slider .ui-handle::before {
+  content: "";
+}
+.ui-slider .ui-handle::after {
+  content: attr(value);
+  border-radius: 5px;
+  background-color: inherit;
+  text-align: center;
+  color: white;
+  position: absolute;
+}
+.ui-slider .ui-handle:not(:active):not(:hover):not(.interact-dragging)::after {
+  display: none;
+}
+.ui-slider .ui-container {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.ui-slider.ui-horizontal .ui-container {
+  height: 30px;
+  width: 100%;
+}
+.ui-slider.ui-horizontal .ui-handle::before {
+  top: 0;
+  left: -10px;
+  width: 14px;
+  height: 24px;
+}
+.ui-slider.ui-horizontal .ui-handle::after {
+  width: 40px;
+  top: -30px;
+  left: -20px;
+}
+.ui-slider.ui-horizontal .ui-bar {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0;
+}
+.ui-slider.ui-vertical .ui-container {
+  height: 200px;
+  width: 30px;
+}
+.ui-slider.ui-vertical .ui-handle::before {
+  left: 0;
+  top: -10px;
+  width: 24px;
+  height: 14px;
+}
+.ui-slider.ui-vertical .ui-handle::after {
+  width: 40px;
+  top: -10px;
+  left: 30px;
+}
+.ui-slider.ui-vertical .ui-bar {
+  width: 20px;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.ui-toggle {
+  width: 30px;
+  height: 30px;
+}
+.ui-toggle .ui-container {
+  padding: 0;
+  border: none;
+}
+.ui-toggle .ui-handle {
+  border-style: solid;
+}
+.ui-toggle.ui-horizontal .ui-container {
+  height: 30px;
+  width: 100%;
+}
+.ui-toggle.ui-horizontal .ui-handle {
+  top: 0px;
+  width: 50%;
+  height: 24px;
+}
+.ui-toggle.ui-horizontal .ui-bar {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0;
+}
+.ui-toggle.ui-vertical .ui-container {
+  height: 100%;
+  width: 30px;
+}
+.ui-toggle.ui-vertical .ui-handle {
+  left: 0px;
+  width: 24px;
+  height: 50%;
+}
+.ui-toggle.ui-vertical .ui-bar {
+  width: 20px;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.ui-slider[readonly] .ui-handle, .ui-toggle[readonly] .ui-handle,
+.ui-slider[disabled] .ui-handle, .ui-toggle[disabled] .ui-handle {
+  background-color: gray;
+  border-color: #4d4d4d;
+}
+.ui-slider[readonly] .ui-handle::after, .ui-toggle[readonly] .ui-handle::after,
+.ui-slider[disabled] .ui-handle::after, .ui-toggle[disabled] .ui-handle::after {
+  display: none;
+}
+.ui-slider[readonly] .ui-bar, .ui-toggle[readonly] .ui-bar,
+.ui-slider[disabled] .ui-bar, .ui-toggle[disabled] .ui-bar {
+  background-color: #b3b3b3;
+  border-color: #888888;
+}
+
+.ui-colorPicker > .ui-container .ui-display {
+  width: 20%;
+  float: right;
+}
+.ui-colorPicker > .ui-container .ui-slider {
+  width: 75%;
+}
+.ui-colorPicker > .ui-container .ui-slider.red .ui-handle {
+  background-color: red;
+  border-color: #b30000;
+}
+.ui-colorPicker > .ui-container .ui-slider.green .ui-handle {
+  background-color: green;
+  border-color: #003400;
+}
+.ui-colorPicker > .ui-container .ui-slider.blue .ui-handle {
+  background-color: blue;
+  border-color: #0000b3;
+}
+
+.ui-float > .ui-container {
+  overflow: hidden;
+}
+.ui-float > .ui-container > .ui-handle {
+  width: 100%;
+  height: 20px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  content: attr(title);
+  text-align: center;
+}
+.ui-float > .ui-container > .ui-content {
+  background-color: white;
+  color: black;
+  overflow: hidden;
+}
