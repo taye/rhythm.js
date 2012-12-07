@@ -1,5 +1,5 @@
 /*
-null * Copyright 2012 Taye Adeyemi
+ * Copyright 2012 Taye Adeyemi
  *
  * This file is part of rhythm.
  *
