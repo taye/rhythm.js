@@ -118,7 +118,7 @@ Dot.prototype = {
             introStart: timing.hit - timing.intro,
             introDur: timing.intro,
             hit: timing.hit,
-            fadeStart: timing.hit + timing.suspend,
+            fadeStart: timing.hit + (timing.suspend || timing.intro + 200),
             fadeDur: timing.fade,
             fadeEnd: timing.hit + timing.fade
         }
